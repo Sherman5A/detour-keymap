@@ -26,7 +26,9 @@ enum layer_names {
     _PUN,
     _NUM,
     _FUN,
-    _MOUSE
+    _MOUSE,
+    _RGB,
+    _KEY
 };
 
 #ifdef OLED_ENABLE
@@ -39,58 +41,74 @@ os_variant_t current_platform;
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_BASE] = LAYOUT(
-        KC_ESC,                                                                            KC_1,         EE_CLR,        QK_BOOT,        QK_REBOOT,
+        KC_ESC,                                                                            KC_1,         EE_CLR,        TG(_KEY),      TG(_RGB),
         KC_Q,         KC_W,          KC_E,         KC_R,         KC_T,        KC_Y,        KC_U,         KC_I,          KC_O,          KC_P,    KC_QUOT,
         LGUI_T(KC_A), LALT_T(KC_S),  LSFT_T(KC_D), LCTL_T(KC_F), KC_G,        KC_H,        RCTL_T(KC_J), RSFT_T(KC_K),  RALT_T(KC_L),  RGUI_T(KC_SCLN),
         KC_Z,         KC_X,          KC_C,         KC_V,         KC_B,        KC_N,        KC_M,         KC_COMMA,      KC_DOT,        KC_SLASH,
         MO(_NAV),     OSM(MOD_LSFT), MO(_NUM),                   KC_SPC,      KC_BSPC,                   MO(_PUN),      OSM(MOD_LSFT), MO(_NAV)
     ),
     [_NAV] = LAYOUT(
-        KC_TRNS,                                                                          KC_NO,        KC_NO,        KC_NO,        KC_NO,
-        KC_NO,        KC_NO,        KC_NO,        KC_NO,        KC_NO,       KC_NO,       KC_NO,        KC_NO,        KC_NO,        KC_NO,   KC_NO,
-        KC_NO,        KC_NO,        KC_NO,        KC_NO,        KC_NO,       KC_LEFT,     KC_DOWN,      KC_UP,        KC_RIGHT,     KC_NO,
-        KC_NO,        KC_NO,        KC_NO,        KC_NO,        KC_NO,       KC_NO,       KC_NO,        KC_NO,        KC_NO,        KC_NO,
-        KC_NO,        KC_NO,        KC_NO,                      KC_TRNS,     KC_TRNS,                   KC_NO,        KC_NO,        KC_NO
+        KC_TRNS,                                                                           KC_NO,        KC_NO,         KC_NO,         KC_NO,
+        KC_NO,        KC_NO,         KC_NO,        KC_NO,        KC_NO,       KC_NO,       KC_NO,        KC_NO,         KC_NO,         KC_NO,   KC_NO,
+        KC_NO,        KC_NO,         KC_NO,        KC_NO,        KC_NO,       KC_LEFT,     KC_DOWN,      KC_UP,         KC_RIGHT,      KC_NO,
+        KC_NO,        KC_NO,         KC_NO,        KC_NO,        KC_NO,       KC_NO,       KC_NO,        KC_NO,         KC_NO,         KC_NO,
+        KC_NO,        KC_NO,         KC_NO,                      KC_TRNS,     KC_TRNS,                   KC_NO,         KC_NO,         KC_NO
     ),
     [_PUN] = LAYOUT(
-        KC_ESC,                                                                           KC_NO,        KC_NO,        KC_NO,        KC_NO,
-        KC_EXLM,      KC_AT,        KC_HASH,      KC_AMPR,      KC_ASTR,     KC_NO,       KC_NO,        KC_NO,        KC_NO,        KC_NO,   KC_NO,
-        KC_UNDS,      KC_PERC,      KC_MINS,      KC_EQL,       KC_PLUS,     KC_CIRC,     KC_LCTL,      KC_LSFT,      KC_LALT,      KC_LGUI,
-        KC_BSLS,      KC_GRV,       KC_TILD,      KC_PIPE,      KC_NO,       KC_NO,       KC_NO,        KC_NO,        KC_NO,        KC_NO,
-        KC_NO,        KC_NO,        KC_NO,                      KC_TRNS,     KC_TRNS,                   KC_NO,        KC_NO,        KC_NO
+        KC_ESC,                                                                            KC_NO,        KC_NO,         KC_NO,         KC_NO,
+        KC_EXLM,      KC_AT,         KC_HASH,      KC_AMPR,      KC_ASTR,     KC_NO,       KC_NO,        KC_NO,         KC_NO,         KC_NO,   KC_NO,
+        KC_UNDS,      KC_PERC,       KC_MINS,      KC_EQL,       KC_PLUS,     KC_CIRC,     KC_LCTL,      KC_LSFT,       KC_LALT,       KC_LGUI,
+        KC_BSLS,      KC_GRV,        KC_TILD,      KC_PIPE,      KC_NO,       KC_NO,       KC_NO,        KC_NO,         KC_NO,         KC_NO,
+        KC_NO,        KC_NO,         KC_NO,                      KC_TRNS,     KC_TRNS,                   KC_NO,         KC_NO,         KC_NO
     ),
     [_NUM] = LAYOUT(
-        KC_ESC,                                                                           KC_NO,        KC_NO,        KC_NO,        KC_NO,
-        KC_NO,        KC_5,         KC_6,         KC_7,         KC_NO,       KC_NO,       KC_NO,        KC_NO,        KC_NO,        KC_NO,   KC_NO,
-        KC_1,         KC_2,         KC_3,         KC_4,         KC_5,        KC_6,        KC_7,         KC_8,         KC_9,         KC_0,
-        KC_NO,        KC_8,         KC_9,         KC_0,         KC_NO,       KC_NO,       KC_NO,        KC_NO,        KC_NO,        KC_NO,
-        KC_NO,        KC_NO,        KC_NO,                      KC_TRNS,     KC_TRNS,                   KC_NO,        KC_NO,        KC_NO
+        KC_ESC,                                                                            KC_NO,        KC_NO,         KC_NO,         KC_NO,
+        KC_NO,        KC_5,          KC_6,         KC_7,         KC_NO,       KC_NO,       KC_NO,        KC_NO,         KC_NO,         KC_NO,   KC_NO,
+        KC_1,         KC_2,          KC_3,         KC_4,         KC_5,        KC_6,        KC_7,         KC_8,          KC_9,          KC_0,
+        KC_NO,        KC_8,          KC_9,         KC_0,         KC_NO,       KC_NO,       KC_NO,        KC_NO,         KC_NO,         KC_NO,
+        KC_NO,        KC_NO,         KC_NO,                      KC_TRNS,     KC_TRNS,                   KC_NO,         KC_NO,         KC_NO
     ),
     [_FUN] = LAYOUT(
-        KC_ESC,                                                                           KC_NO,        KC_NO,        KC_NO,        KC_NO,
-        KC_NO,        KC_NO,        MS_UP,        KC_NO,        KC_NO,       KC_NO,       KC_NO,        KC_NO,        KC_NO,        KC_NO,   KC_NO,
-        KC_NO,        MS_LEFT,      MS_DOWN,      MS_RGHT,      KC_NO,       KC_NO,       KC_NO,        KC_NO,        KC_NO,        KC_NO,
-        KC_NO,        KC_NO,        KC_NO,        KC_NO,        KC_NO,       KC_NO,       KC_NO,        KC_NO,        KC_NO,        KC_NO,
-        KC_NO,        KC_NO,        KC_NO,                      KC_TRNS,     KC_TRNS,                   KC_NO,        KC_NO,        KC_NO
+        KC_ESC,                                                                            KC_NO,        KC_NO,         KC_NO,         KC_NO,
+        KC_NO,        KC_NO,         MS_UP,        KC_NO,        KC_NO,       KC_NO,       KC_NO,        KC_NO,         KC_NO,         KC_NO,   KC_NO,
+        KC_NO,        MS_LEFT,       MS_DOWN,      MS_RGHT,      KC_NO,       KC_NO,       KC_NO,        KC_NO,         KC_NO,         KC_NO,
+        KC_NO,        KC_NO,         KC_NO,        KC_NO,        KC_NO,       KC_NO,       KC_NO,        KC_NO,         KC_NO,         KC_NO,
+        KC_NO,        KC_NO,         KC_NO,                      KC_TRNS,     KC_TRNS,                   KC_NO,         KC_NO,         KC_NO
     ),
     [_MOUSE] = LAYOUT(
-        KC_ESC,                                                                           KC_NO,        KC_NO,        KC_NO,        KC_NO,
-        KC_NO,        KC_NO,        MS_UP,        KC_NO,        KC_NO,       KC_NO,       KC_NO,        KC_NO,        KC_NO,        KC_NO,   KC_NO,
-        KC_NO,        MS_LEFT,      MS_DOWN,      MS_RGHT,      KC_NO,       KC_NO,       KC_NO,        KC_NO,        KC_NO,        KC_NO,
-        KC_NO,        KC_NO,        KC_NO,        KC_NO,        KC_NO,       KC_NO,       KC_NO,        KC_NO,        KC_NO,        KC_NO,
-        KC_NO,        KC_NO,        KC_NO,                      KC_TRNS,     KC_TRNS,                   KC_NO,        KC_NO,        KC_NO
+        KC_ESC,                                                                            KC_NO,        KC_NO,         KC_NO,         KC_NO,
+        KC_NO,        KC_NO,         MS_UP,        KC_NO,        KC_NO,       KC_NO,       KC_NO,        KC_NO,         KC_NO,         KC_NO,   KC_NO,
+        KC_NO,        MS_LEFT,       MS_DOWN,      MS_RGHT,      KC_NO,       KC_NO,       KC_NO,        KC_NO,         KC_NO,         KC_NO,
+        KC_NO,        KC_NO,         KC_NO,        KC_NO,        KC_NO,       KC_NO,       KC_NO,        KC_NO,         KC_NO,         KC_NO,
+        KC_NO,        KC_NO,         KC_NO,                      KC_TRNS,     KC_TRNS,                   KC_NO,         KC_NO,         KC_NO
     ),
+    [_RGB] = LAYOUT(
+        RM_TOGG,                                                                           RM_NEXT,      RM_HUEU,       RM_SATU,       KC_TRNS,
+        KC_NO,        KC_NO,         MS_UP,        KC_NO,        KC_NO,       KC_NO,       KC_NO,        RM_PREV,       RM_HUED,       RM_SATD, KC_NO,
+        KC_NO,        MS_LEFT,       MS_DOWN,      MS_RGHT,      KC_NO,       KC_NO,       KC_NO,        KC_NO,         KC_NO,         KC_NO,
+        KC_NO,        KC_NO,         KC_NO,        KC_NO,        KC_NO,       KC_NO,       KC_NO,        KC_NO,         KC_NO,         KC_NO,
+        KC_NO,        KC_NO,         KC_NO,                      KC_TRNS,     KC_TRNS,                   KC_NO,         KC_NO,         KC_NO
+    ),
+    [_KEY] = LAYOUT(
+        KC_NO,                                                                             QK_BOOT,      QK_REBOOT,     TG(_KEY),      EE_CLR,
+        KC_NO,        KC_NO,         MS_UP,        KC_NO,        KC_NO,       KC_NO,       KC_NO,        KC_NO,         KC_NO,         KC_NO,   KC_NO,
+        KC_NO,        MS_LEFT,       MS_DOWN,      MS_RGHT,      KC_NO,       KC_NO,       KC_NO,        KC_NO,         KC_NO,         KC_NO,
+        KC_NO,        KC_NO,         KC_NO,        KC_NO,        KC_NO,       KC_NO,       KC_NO,        KC_NO,         KC_NO,         KC_NO,
+        KC_NO,        KC_NO,         KC_NO,                      KC_TRNS,     KC_TRNS,                   KC_NO,         KC_NO,         KC_NO
+    )
 };
 
 // First 3 encoders are unused
 #ifdef ENCODER_MAP_ENABLE
     const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
-        [_BASE]  = { ENCODER_CCW_CW(KC_UP,    KC_DOWN), ENCODER_CCW_CW(KC_UP, KC_DOWN), ENCODER_CCW_CW(KC_UP, KC_DOWN), ENCODER_CCW_CW(KC_UP, KC_DOWN)},
-        [_NAV]   = { ENCODER_CCW_CW(RGB_RMOD, RGB_MOD), ENCODER_CCW_CW(KC_UP, KC_DOWN), ENCODER_CCW_CW(KC_UP, KC_DOWN), ENCODER_CCW_CW(KC_UP, KC_DOWN)},
-        [_PUN]   = { ENCODER_CCW_CW(KC_VOLD,  KC_VOLU), ENCODER_CCW_CW(KC_UP, KC_DOWN), ENCODER_CCW_CW(KC_UP, KC_DOWN), ENCODER_CCW_CW(KC_UP, KC_DOWN)},
-        [_NUM]   = { ENCODER_CCW_CW(KC_VOLD,  KC_VOLU), ENCODER_CCW_CW(KC_UP, KC_DOWN), ENCODER_CCW_CW(KC_UP, KC_DOWN), ENCODER_CCW_CW(KC_UP, KC_DOWN)},
-        [_FUN]   = { ENCODER_CCW_CW(KC_VOLD,  KC_VOLU), ENCODER_CCW_CW(KC_UP, KC_DOWN), ENCODER_CCW_CW(KC_UP, KC_DOWN), ENCODER_CCW_CW(KC_UP, KC_DOWN)},
-        [_MOUSE] = { ENCODER_CCW_CW(KC_VOLD,  KC_VOLU), ENCODER_CCW_CW(KC_UP, KC_DOWN), ENCODER_CCW_CW(KC_UP, KC_DOWN), ENCODER_CCW_CW(KC_UP, KC_DOWN)}
+        [_BASE]  = { ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_UP, KC_DOWN)},
+        [_NAV]   = { ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_DOWN)},
+        [_PUN]   = { ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_DOWN)},
+        [_NUM]   = { ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_DOWN)},
+        [_FUN]   = { ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_DOWN)},
+        [_MOUSE] = { ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_DOWN)},
+        [_RGB]   = { ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(RM_VALD, RM_VALU)},
+        [_KEY]   = { ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO)}
     };
 #endif
 
@@ -332,22 +350,9 @@ combo_t key_combos[] = {
     }
 
     void render_current_layer(){
-        switch (get_highest_layer(layer_state)) {
-                case 0:
-                    oled_write(PSTR("Layer 0"), false);
-                    break;
-                case 1:
-                    oled_write(PSTR("Layer 1"), false);
-                    break;
-                case 2:
-                    oled_write(PSTR("Layer 2"), false);
-                    break;
-                case 3:
-                    oled_write(PSTR("Layer 3"), false);
-                    break;
-                default:
-                    oled_write(PSTR("Layer ?"), false);    // Should never display, here as a catchall
-        }
+        char PROGMEM layer[12];
+        snprintf(layer, sizeof(layer), "Layer %d", get_highest_layer(layer_state));
+        oled_write_P(layer, false);
     }
 
     void render_current_wpm(){
