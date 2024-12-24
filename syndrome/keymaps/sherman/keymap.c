@@ -41,49 +41,49 @@ os_variant_t current_platform;
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_BASE] = LAYOUT(
-        KC_ESC,                                                                            KC_1,         EE_CLR,        TG(_KEY),      TG(_RGB),
-        KC_Q,         KC_W,          KC_E,         KC_R,         KC_T,        KC_Y,        KC_U,         KC_I,          KC_O,          KC_P,    KC_QUOT,
-        LGUI_T(KC_A), LALT_T(KC_S),  LSFT_T(KC_D), LCTL_T(KC_F), KC_G,        KC_H,        RCTL_T(KC_J), RSFT_T(KC_K),  RALT_T(KC_L),  RGUI_T(KC_SCLN),
-        KC_Z,         KC_X,          KC_C,         KC_V,         KC_B,        KC_N,        KC_M,         KC_COMMA,      KC_DOT,        KC_SLASH,
-        MO(_NAV),     OSM(MOD_LSFT), MO(_NUM),                   KC_SPC,      KC_BSPC,                   MO(_PUN),      OSM(MOD_LSFT), MO(_NAV)
+        KC_ESC,                                                                             KC_1,         TG(_MOUSE),    TG(_RGB),      TG(_KEY),
+        KC_Q,         KC_W,          KC_E,          KC_R,         KC_T,        KC_Y,        KC_U,         KC_I,          KC_O,          KC_P,    KC_QUOT,
+        LGUI_T(KC_A), LALT_T(KC_S),  LSFT_T(KC_D),  LCTL_T(KC_F), KC_G,        KC_H,        RCTL_T(KC_J), RSFT_T(KC_K),  RALT_T(KC_L),  RGUI_T(KC_SCLN),
+        KC_Z,         KC_X,          KC_C,          KC_V,         KC_B,        KC_N,        KC_M,         KC_COMMA,      KC_DOT,        KC_SLASH,
+        MO(_NAV),     MO(_NUM),      MO(_NUM),                    KC_SPC,      KC_BSPC,                   MO(_PUN),      MO(_FUN),      KC_NO
     ),
     [_NAV] = LAYOUT(
-        KC_TRNS,                                                                           KC_NO,        KC_NO,         KC_NO,         KC_NO,
+        KC_TRNS,                                                                           KC_NO,        KC_TRNS,       KC_NO,         KC_NO,
         KC_NO,        KC_NO,         KC_NO,        KC_NO,        KC_NO,       KC_NO,       KC_NO,        KC_NO,         KC_NO,         KC_NO,   KC_NO,
         KC_NO,        KC_NO,         KC_NO,        KC_NO,        KC_NO,       KC_LEFT,     KC_DOWN,      KC_UP,         KC_RIGHT,      KC_NO,
         KC_NO,        KC_NO,         KC_NO,        KC_NO,        KC_NO,       KC_NO,       KC_NO,        KC_NO,         KC_NO,         KC_NO,
         KC_NO,        KC_NO,         KC_NO,                      KC_TRNS,     KC_TRNS,                   KC_NO,         KC_NO,         KC_NO
     ),
     [_PUN] = LAYOUT(
-        KC_ESC,                                                                            KC_NO,        KC_NO,         KC_NO,         KC_NO,
+        KC_ESC,                                                                            KC_NO,        KC_TRNS,       KC_NO,         KC_NO,
         KC_EXLM,      KC_AT,         KC_HASH,      KC_AMPR,      KC_ASTR,     KC_NO,       KC_NO,        KC_NO,         KC_NO,         KC_NO,   KC_NO,
         KC_UNDS,      KC_PERC,       KC_MINS,      KC_EQL,       KC_PLUS,     KC_CIRC,     KC_LCTL,      KC_LSFT,       KC_LALT,       KC_LGUI,
         KC_BSLS,      KC_GRV,        KC_TILD,      KC_PIPE,      KC_NO,       KC_NO,       KC_NO,        KC_NO,         KC_NO,         KC_NO,
         KC_NO,        KC_NO,         KC_NO,                      KC_TRNS,     KC_TRNS,                   KC_NO,         KC_NO,         KC_NO
     ),
     [_NUM] = LAYOUT(
-        KC_ESC,                                                                            KC_NO,        KC_NO,         KC_NO,         KC_NO,
+        KC_ESC,                                                                            KC_NO,        KC_TRNS,       KC_NO,         KC_NO,
         KC_NO,        KC_5,          KC_6,         KC_7,         KC_NO,       KC_NO,       KC_NO,        KC_NO,         KC_NO,         KC_NO,   KC_NO,
         KC_1,         KC_2,          KC_3,         KC_4,         KC_5,        KC_6,        KC_7,         KC_8,          KC_9,          KC_0,
         KC_NO,        KC_8,          KC_9,         KC_0,         KC_NO,       KC_NO,       KC_NO,        KC_NO,         KC_NO,         KC_NO,
         KC_NO,        KC_NO,         KC_NO,                      KC_TRNS,     KC_TRNS,                   KC_NO,         KC_NO,         KC_NO
     ),
     [_FUN] = LAYOUT(
-        KC_ESC,                                                                            KC_NO,        KC_NO,         KC_NO,         KC_NO,
-        KC_NO,        KC_NO,         MS_UP,        KC_NO,        KC_NO,       KC_NO,       KC_NO,        KC_NO,         KC_NO,         KC_NO,   KC_NO,
-        KC_NO,        MS_LEFT,       MS_DOWN,      MS_RGHT,      KC_NO,       KC_NO,       KC_NO,        KC_NO,         KC_NO,         KC_NO,
-        KC_NO,        KC_NO,         KC_NO,        KC_NO,        KC_NO,       KC_NO,       KC_NO,        KC_NO,         KC_NO,         KC_NO,
+        KC_TRNS,                                                                           KC_NO,        KC_TRNS,       KC_NO,         KC_NO,
+        KC_NO,        KC_NO,         KC_NO,        KC_NO,        KC_NO,       KC_NO,       KC_NO,        KC_NO,         KC_NO,         KC_NO,   KC_NO,
+        KC_F1,        KC_F2,         KC_F3,        KC_F4,        KC_F5,       KC_F6,       KC_F7,        KC_F8,         KC_F9,         KC_F10,
+        KC_F11,       KC_F12,        KC_NO,        KC_NO,        KC_NO,       KC_NO,       KC_NO,        KC_NO,         KC_NO,         KC_NO,
         KC_NO,        KC_NO,         KC_NO,                      KC_TRNS,     KC_TRNS,                   KC_NO,         KC_NO,         KC_NO
     ),
     [_MOUSE] = LAYOUT(
-        KC_ESC,                                                                            KC_NO,        KC_NO,         KC_NO,         KC_NO,
+        KC_ESC,                                                                            KC_TRNS,      KC_TRNS,       TG(_RGB),      KC_TRNS,
         KC_NO,        KC_NO,         MS_UP,        KC_NO,        KC_NO,       KC_NO,       KC_NO,        KC_NO,         KC_NO,         KC_NO,   KC_NO,
         KC_NO,        MS_LEFT,       MS_DOWN,      MS_RGHT,      KC_NO,       KC_NO,       KC_NO,        KC_NO,         KC_NO,         KC_NO,
         KC_NO,        KC_NO,         KC_NO,        KC_NO,        KC_NO,       KC_NO,       KC_NO,        KC_NO,         KC_NO,         KC_NO,
-        KC_NO,        KC_NO,         KC_NO,                      KC_TRNS,     KC_TRNS,                   KC_NO,         KC_NO,         KC_NO
+        KC_NO,        KC_NO,         KC_NO,                      MS_BTN1,     MS_BTN2,                   MS_BTN3,       MS_BTN4,       KC_NO
     ),
     [_RGB] = LAYOUT(
-        RM_TOGG,                                                                           RM_NEXT,      RM_HUEU,       RM_SATU,       KC_TRNS,
+        RM_TOGG,                                                                           RM_NEXT,      RM_HUEU,       RM_SATU,       TG(_RGB),
         KC_NO,        KC_NO,         MS_UP,        KC_NO,        KC_NO,       KC_NO,       KC_NO,        RM_PREV,       RM_HUED,       RM_SATD, KC_NO,
         KC_NO,        MS_LEFT,       MS_DOWN,      MS_RGHT,      KC_NO,       KC_NO,       KC_NO,        KC_NO,         KC_NO,         KC_NO,
         KC_NO,        KC_NO,         KC_NO,        KC_NO,        KC_NO,       KC_NO,       KC_NO,        KC_NO,         KC_NO,         KC_NO,
@@ -91,8 +91,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
     [_KEY] = LAYOUT(
         KC_NO,                                                                             QK_BOOT,      QK_REBOOT,     TG(_KEY),      EE_CLR,
-        KC_NO,        KC_NO,         MS_UP,        KC_NO,        KC_NO,       KC_NO,       KC_NO,        KC_NO,         KC_NO,         KC_NO,   KC_NO,
-        KC_NO,        MS_LEFT,       MS_DOWN,      MS_RGHT,      KC_NO,       KC_NO,       KC_NO,        KC_NO,         KC_NO,         KC_NO,
+        KC_NO,        KC_NO,         KC_NO,        KC_NO,        KC_NO,       KC_NO,       KC_NO,        KC_NO,         KC_NO,         KC_NO,   KC_NO,
+        KC_NO,        KC_NO,         KC_NO,        KC_NO,        KC_NO,       KC_NO,       KC_NO,        KC_NO,         KC_NO,         KC_NO,
         KC_NO,        KC_NO,         KC_NO,        KC_NO,        KC_NO,       KC_NO,       KC_NO,        KC_NO,         KC_NO,         KC_NO,
         KC_NO,        KC_NO,         KC_NO,                      KC_TRNS,     KC_TRNS,                   KC_NO,         KC_NO,         KC_NO
     )
@@ -106,7 +106,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         [_PUN]   = { ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_DOWN)},
         [_NUM]   = { ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_DOWN)},
         [_FUN]   = { ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_DOWN)},
-        [_MOUSE] = { ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_DOWN)},
+        [_MOUSE] = { ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(MS_WHLU, MS_WHLD)},
         [_RGB]   = { ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(RM_VALD, RM_VALU)},
         [_KEY]   = { ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO)}
     };
@@ -170,17 +170,20 @@ uint16_t achordion_streak_chord_timeout(
 
 #ifdef COMBO_ENABLE
 // Combos
-const uint16_t PROGMEM q_w_esc[]       = { KC_Q, KC_W, COMBO_END };
-const uint16_t PROGMEM a_s_tab[]       = { LGUI_T(KC_A), LALT_T(KC_S), COMBO_END };
-const uint16_t PROGMEM z_x_cut[]       = { KC_Z, KC_X, COMBO_END };
-const uint16_t PROGMEM z_c_copy[]      = { KC_Z, KC_C, COMBO_END };
-const uint16_t PROGMEM z_v_paste[]     = { KC_Z, KC_V, COMBO_END };
-const uint16_t PROGMEM spc_bspc_ent[]  = { KC_SPC, KC_BSPC, COMBO_END };
-const uint16_t PROGMEM i_o_lprn[]      = { KC_I, KC_O, COMBO_END };
-const uint16_t PROGMEM o_p_rprn[]      = { KC_O, KC_P, COMBO_END };
-const uint16_t PROGMEM m_comm_lbrc[]   = { KC_N, KC_M, COMBO_END };
-const uint16_t PROGMEM comm_dot_rbrc[] = { KC_M, KC_COMM, COMBO_END };
-const uint16_t PROGMEM j_k_osm_sft[]   = { RCTL_T(KC_J), RSFT_T(KC_K), COMBO_END };
+const uint16_t PROGMEM q_w_esc[]        = { KC_Q, KC_W, COMBO_END };
+const uint16_t PROGMEM a_s_tab[]        = { LGUI_T(KC_A), LALT_T(KC_S), COMBO_END };
+const uint16_t PROGMEM z_x_cut[]        = { KC_Z, KC_X, COMBO_END };
+const uint16_t PROGMEM z_c_copy[]       = { KC_Z, KC_C, COMBO_END };
+const uint16_t PROGMEM z_v_paste[]      = { KC_Z, KC_V, COMBO_END };
+const uint16_t PROGMEM spc_bspc_ent[]   = { KC_SPC, KC_BSPC, COMBO_END };
+const uint16_t PROGMEM u_i_lprn[]       = { KC_U, KC_I, COMBO_END };
+const uint16_t PROGMEM i_o_rprn[]       = { KC_I, KC_O, COMBO_END };
+const uint16_t PROGMEM o_p_lbrc[]       = { KC_X, KC_C, COMBO_END };
+const uint16_t PROGMEM p_quot_rbrc[]    = { KC_C, KC_V, COMBO_END };
+const uint16_t PROGMEM n_m_lcbr[]       = { KC_N, KC_M, COMBO_END };
+const uint16_t PROGMEM m_comm_rcbr[]    = { KC_M, KC_COMM, COMBO_END };
+const uint16_t PROGMEM j_k_osm_sft[]    = { RCTL_T(KC_J), RSFT_T(KC_K), COMBO_END };
+const uint16_t PROGMEM btn1_btn2_btn3[] = { MS_BTN1, MS_BTN2, COMBO_END };
 
 enum combos {
     Q_W_ESC,
@@ -193,21 +196,27 @@ enum combos {
     O_P_RPRN,
     M_COMM_LBRC,
     COMM_DOT_RBRC,
-    J_K_OSM_SFT
+    M_COMM_LCBR,
+    COMM_DOT_RCBR,
+    J_K_OSM_SFT,
+    BTN1_BTN2_BTN3
 };
 
 combo_t key_combos[] = {
-    [Q_W_ESC]       = COMBO(q_w_esc, KC_ESC),
-    [A_S_TAB]       = COMBO(a_s_tab, KC_TAB),
-    [Z_X_CUT]       = COMBO(z_x_cut, C(KC_X)),
-    [Z_C_COPY]      = COMBO(z_c_copy, C(KC_C)),
-    [Z_V_PASTE]     = COMBO(z_v_paste, C(KC_V)),
-    [SPC_BSPC_ENT]  = COMBO(spc_bspc_ent, KC_ENTER),
-    [I_O_LPRN]      = COMBO(i_o_lprn, KC_LPRN),
-    [O_P_RPRN]      = COMBO(o_p_rprn, KC_RPRN),
-    [M_COMM_LBRC]   = COMBO(m_comm_lbrc, KC_LBRC),
-    [COMM_DOT_RBRC] = COMBO(comm_dot_rbrc, KC_RBRC),
-    [J_K_OSM_SFT]   = COMBO(j_k_osm_sft, OSM(MOD_LSFT))
+    [Q_W_ESC]        = COMBO(q_w_esc, KC_ESC),
+    [A_S_TAB]        = COMBO(a_s_tab, KC_TAB),
+    [Z_X_CUT]        = COMBO(z_x_cut, C(KC_X)),
+    [Z_C_COPY]       = COMBO(z_c_copy, C(KC_C)),
+    [Z_V_PASTE]      = COMBO(z_v_paste, C(KC_V)),
+    [SPC_BSPC_ENT]   = COMBO(spc_bspc_ent, KC_ENTER),
+    [I_O_LPRN]       = COMBO(u_i_lprn, KC_LPRN),
+    [O_P_RPRN]       = COMBO(i_o_rprn, KC_RPRN),
+    [M_COMM_LBRC]    = COMBO(o_p_lbrc, KC_LCBR),
+    [COMM_DOT_RBRC]  = COMBO(p_quot_rbrc, KC_RCBR),
+    [M_COMM_LCBR]    = COMBO(n_m_lcbr, KC_LBRC),
+    [COMM_DOT_RCBR]  = COMBO(m_comm_rcbr, KC_RBRC),
+    [J_K_OSM_SFT]    = COMBO(j_k_osm_sft, OSM(MOD_LSFT)),
+    [BTN1_BTN2_BTN3] = COMBO(btn1_btn2_btn3, MS_BTN3)
 };
 #endif
 
@@ -248,7 +257,7 @@ combo_t key_combos[] = {
             macro2rec ? oled_write(PSTR("DM2"), macro2) : oled_write(PSTR("      "),false);
         }
 
-        //direction indicates which macro it is, with 1 being Macro 1, -1 being Macro 2, and 0 being no macro.
+        // Direction indicates which macro it is, with 1 being Macro 1, -1 being Macro 2, and 0 being no macro.
         bool dynamic_macro_record_start_user(int8_t direction){
             prevEnabled = rgb_matrix_is_enabled();
             if (!prevEnabled) { rgb_matrix_enable(); }
@@ -311,7 +320,7 @@ combo_t key_combos[] = {
         oled_write(PSTR("NUM"), led_state.num_lock);
         oled_write(PSTR(" "), false);
         oled_write(PSTR("SCRL"), led_state.scroll_lock);
-        //oled_write_ln_P(PSTR(" "), false);
+        // oled_write_ln_P(PSTR(" "), false);
     }
 
     void render_mod_status(uint8_t modifiers) {
@@ -363,21 +372,22 @@ combo_t key_combos[] = {
     void render_platform_status(int col, int line) {
         /* Show Ctrl-Gui Swap options */
         static const char PROGMEM logo[][5][3] = {
-            {{0x9B, 0x9C, 0}, {0xbb, 0xbc, 0}}, //Android
-            {{0x99, 0x9A, 0}, {0xb9, 0xba, 0}}, //Linux
-            {{0x97, 0x98, 0}, {0xb7, 0xb8, 0}}, //Windows
-            {{0x95, 0x96, 0}, {0xb5, 0xb6, 0}}, //Mac/iOS
-            {{0x9D, 0x9E, 0}, {0xbd, 0xbe, 0}}, //Empty Placeholder
+            {{0x9B, 0x9C, 0}, {0xbb, 0xbc, 0}}, // Android
+            {{0x99, 0x9A, 0}, {0xb9, 0xba, 0}}, // Linux
+            {{0x97, 0x98, 0}, {0xb7, 0xb8, 0}}, // Windows
+            {{0x95, 0x96, 0}, {0xb5, 0xb6, 0}}, // Mac/iOS
+            {{0x9D, 0x9E, 0}, {0xbd, 0xbe, 0}}, // Empty Placeholder
         };
         current_platform = detected_host_os();
         switch (current_platform) {
-            /*case OS_ANDROID: //Android
-                oled_set_cursor(col,line);
-                oled_write(logo[0][0], false);
-                oled_set_cursor(col,line+1);
-                oled_write(logo[0][1], false);
-                break;*/
-            case OS_LINUX: //Linux
+            /* case OS_ANDROID: //Android
+             *  oled_set_cursor(col,line);
+             *  oled_write(logo[0][0], false);
+             *  oled_set_cursor(col,line+1);
+             *  oled_write(logo[0][1], false);
+             *  break;
+             */
+            case OS_LINUX: // Linux
                 oled_set_cursor(col,line);
                 oled_write(logo[1][0], false);
                 oled_set_cursor(col,line+1);
@@ -385,7 +395,7 @@ combo_t key_combos[] = {
                 keymap_config.swap_lctl_lgui = false;
                 keymap_config.swap_rctl_rgui = false;
                 break;
-            case OS_WINDOWS: //Windows
+            case OS_WINDOWS: // Windows
                 oled_set_cursor(col,line);
                 oled_write(logo[2][0], false);
                 oled_set_cursor(col,line+1);
@@ -393,7 +403,7 @@ combo_t key_combos[] = {
                 keymap_config.swap_lctl_lgui = false;
                 keymap_config.swap_rctl_rgui = false;
                 break;
-            case OS_MACOS: //Mac
+            case OS_MACOS: // Mac
                 oled_set_cursor(col,line);
                 oled_write(logo[3][0], false);
                 oled_set_cursor(col,line+1);
@@ -401,7 +411,7 @@ combo_t key_combos[] = {
                 keymap_config.swap_lctl_lgui = true;
                 keymap_config.swap_rctl_rgui = true;
                 break;
-            case OS_IOS: //iOS
+            case OS_IOS: // iOS
                 oled_set_cursor(col,line);
                 oled_write(logo[3][0], false);
                 oled_set_cursor(col,line+1);
@@ -409,7 +419,7 @@ combo_t key_combos[] = {
                 keymap_config.swap_lctl_lgui = true;
                 keymap_config.swap_rctl_rgui = true;
                 break;
-            default: //OS_UNSURE or not configured
+            default: // OS_UNSURE or not configured
                 oled_set_cursor(col,line);
                 oled_write(logo[4][0], false);
                 oled_set_cursor(col,line+1);
