@@ -1,9 +1,11 @@
-SRC += features/achordion.c
+# SRC += features/achordion.c
 ENCODER_MAP_ENABLE = yes
 BOOTMAGIC_ENABLE = yes
 MAGIC_ENABLE = yes
 MOUSEKEY_ENABLE = yes
 CAPS_WORD_ENABLE = yes
 COMBO_ENABLE = yes
+# NKRO_ENABLE = yes
+# LEADER_ENABLE = yes
 # DYNAMIC_MACRO_ENABLE = yes
 
