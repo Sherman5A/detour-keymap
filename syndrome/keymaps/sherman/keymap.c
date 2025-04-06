@@ -210,12 +210,12 @@ const uint16_t PROGMEM z_x_cut[]        = { KC_Z, KC_X, COMBO_END };
 const uint16_t PROGMEM z_c_copy[]       = { KC_Z, KC_C, COMBO_END };
 const uint16_t PROGMEM z_v_paste[]      = { KC_Z, KC_V, COMBO_END };
 const uint16_t PROGMEM spc_bspc_ent[]   = { KC_SPC, KC_BSPC, COMBO_END };
-const uint16_t PROGMEM u_i_lprn[]       = { KC_U, KC_I, COMBO_END };
-const uint16_t PROGMEM i_o_rprn[]       = { KC_I, KC_O, COMBO_END };
-const uint16_t PROGMEM o_p_lbrc[]       = { KC_X, KC_C, COMBO_END };
-const uint16_t PROGMEM p_quot_rbrc[]    = { KC_C, KC_V, COMBO_END };
-const uint16_t PROGMEM n_m_lcbr[]       = { KC_N, KC_M, COMBO_END };
-const uint16_t PROGMEM m_comm_rcbr[]    = { KC_M, KC_COMM, COMBO_END };
+const uint16_t PROGMEM f_e_lprn[]       = { LCTL_T(KC_F), KC_E, COMBO_END };
+const uint16_t PROGMEM j_i_rprn[]       = { RCTL_T(KC_J), KC_I, COMBO_END };
+const uint16_t PROGMEM d_v_lbrc[]       = { LSFT_T(KC_D), KC_V, COMBO_END };
+const uint16_t PROGMEM k_n_rbrc[]       = { RSFT_T(KC_K), KC_N, COMBO_END };
+const uint16_t PROGMEM e_r_lcbr[]       = { KC_E, KC_R, COMBO_END };
+const uint16_t PROGMEM u_i_rcbr[]       = { KC_U, KC_I, COMBO_END };
 const uint16_t PROGMEM j_k_osm_sft[]    = { RCTL_T(KC_J), RSFT_T(KC_K), COMBO_END };
 const uint16_t PROGMEM btn1_btn2_btn3[] = { MS_BTN1, MS_BTN2, COMBO_END };
 
@@ -226,12 +226,12 @@ enum combos {
     Z_C_COPY,
     Z_V_PASTE,
     SPC_BSPC_ENT,
-    I_O_LPRN,
-    O_P_RPRN,
-    M_COMM_LBRC,
-    COMM_DOT_RBRC,
-    M_COMM_LCBR,
-    COMM_DOT_RCBR,
+    F_E_LPRN,
+    J_I_RPRN,
+    D_V_LBRC,
+    K_N_RBRC,
+    E_R_LCBR,
+    U_I_RCBR,
     J_K_OSM_SFT,
     BTN1_BTN2_BTN3
 };
@@ -243,12 +243,12 @@ combo_t key_combos[] = {
     [Z_C_COPY]       = COMBO(z_c_copy, C(KC_C)),
     [Z_V_PASTE]      = COMBO(z_v_paste, C(KC_V)),
     [SPC_BSPC_ENT]   = COMBO(spc_bspc_ent, KC_ENTER),
-    [I_O_LPRN]       = COMBO(u_i_lprn, KC_LPRN),
-    [O_P_RPRN]       = COMBO(i_o_rprn, KC_RPRN),
-    [M_COMM_LBRC]    = COMBO(o_p_lbrc, KC_LCBR),
-    [COMM_DOT_RBRC]  = COMBO(p_quot_rbrc, KC_RCBR),
-    [M_COMM_LCBR]    = COMBO(n_m_lcbr, KC_LBRC),
-    [COMM_DOT_RCBR]  = COMBO(m_comm_rcbr, KC_RBRC),
+    [F_E_LPRN]       = COMBO(f_e_lprn, KC_LPRN),
+    [J_I_RPRN]       = COMBO(j_i_rprn, KC_RPRN),
+    [D_V_LBRC]       = COMBO(d_v_lbrc, KC_LBRC),
+    [K_N_RBRC]       = COMBO(k_n_rbrc, KC_RBRC),
+    [E_R_LCBR]       = COMBO(e_r_lcbr, KC_LCBR),
+    [U_I_RCBR]       = COMBO(u_i_rcbr, KC_RCBR),
     [J_K_OSM_SFT]    = COMBO(j_k_osm_sft, OSM(MOD_LSFT)),
     [BTN1_BTN2_BTN3] = COMBO(btn1_btn2_btn3, MS_BTN3)
 };
